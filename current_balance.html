@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
+    <title>SNB</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgb(238, 232, 232);
+      box-shadow: 1px 1px 8px 1px rgb(245, 242, 242);
+      padding: 1%;
+    }
+    #left {
+      display: flex;
+      align-items: center;
+      width: 50%;
+    }
+    nav > #left > img {
+      width: 6%;
+      margin-right: 1%;
+    }
+    #right {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      justify-content: end;
+    }
+    #right > p {
+      margin: 0px 15px;
+    }
+    #nav2 {
+      display: flex;
+      justify-content: center;
+      border: 1px solid rgb(30, 162, 250);
+      color: white;
+      background-color: rgb(30, 162, 250);
+    }
+    #nav2 > p {
+      margin: 15px 35px;
+    }
+    #login {
+      border: 1px solid rgb(245, 242, 242);
+      box-shadow: 1px 1px 8px 1px rgb(245, 242, 242);
+      width: 50%;
+      padding: 1%;
+      border-radius: 30px;
+      margin-top: 2%;
+      font-size: 1.15rem;
+    }
+
+    td {
+      padding: 14px;
+    }
+    #details {
+      background: rgb(243, 239, 239);
+      border-radius: 10px;
+    }
+    #notification {
+      border: 1px solid rgb(243, 239, 239);
+      width: 30%;
+      background-color: rgb(243, 239, 239);
+      border-radius: 10px;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      visibility: hidden;
+    }
+  </style>
+  <body>
+    <nav>
+      <div id="left">
+        <img src="./logo.png" />
+        <div>
+          Sapiens National Bank (SNB)<br />
+          ONLINE
+        </div>
+      </div>
+      <div id="right">
+        <p>SNB Home loans</p>
+        <p>About Online SNB</p>
+        <p>Forms</p>
+        <p>Net Banking Branches</p>
+        <select>
+          <option>Language</option>
+        </select>
+      </div>
+    </nav>
+    <div id="nav2">
+      <p>Home</p>
+      <p>Products & Services</p>
+      <p>How Do I</p>
+      <p>Manage Debit Card E-Mandate</p>
+      <p>Contact Us</p>
+    </div>
+    <div>
+      <center>
+        <div id="login">
+          <table>
+            <tr>
+              <td>Name</td>
+              <td id="">P. Shanmukh Rangarajan</td>
+            </tr>
+            <tr>
+              <td>A/c type</td>
+              <td id="">Savings account</td>
+            </tr>
+            <tr>
+              <td>IFSC Code</td>
+              <td id="details">6540E754D3427AW</td>
+            </tr>
+            <tr>
+              <td>Account no.</td>
+              <td id="">984634686874465</td>
+            </tr>
+            <tr>
+              <td>Branch</td>
+              <td id="">Banjara hills</td>
+            </tr>
+            <tr>
+              <td>Current Balance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td id="details" class="balance">₹ 25,15,957</td>
+            </tr>
+          </table>
+        </div>
+        <div id="notification">
+          <p>
+            Funds transferred successfully !!<br />Your current account balance
+            is nil, please maintain minimum balance in your account.<br />
+            - SBN -
+          </p>
+        </div>
+      </center>
+    </div>
+  </body>
+  <script>
+    var money = 2515957;
+    document.querySelector(".balance").addEventListener("mouseenter", () => {
+      setInterval(() => {
+        if (money > 1000) {
+          money -= 1000;
+          document.querySelector(".balance").innerHTML = "₹ " + money;
+        }
+        if (money == 957) {
+          document.querySelector(".balance").innerHTML = "₹ 0";
+          document.querySelector("#notification").style.visibility = "visible";
+        }
+      }, 0.1);
+    });
+  </script>
+</html>
